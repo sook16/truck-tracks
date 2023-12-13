@@ -1,0 +1,789 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Truck Track - Colored Canvas</title>
+    <style>
+        body {
+            margin: 0;
+            overflow: hidden;
+            position: relative;
+        }
+
+        canvas {
+            background-color: #FFD400;
+            display: block;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 3000px;
+            height: 3000px;
+            z-index: 0;
+        }
+
+        .track {
+            position: absolute;
+            top: 70px;
+            left: 40px;
+            width: 800px;
+            height: 400px;
+            z-index: 1;
+        }
+
+        .track1 {
+            position: absolute;
+            top: 70px;
+            left: 1000px;
+            width: 9184px;
+            height: 400px;
+            z-index: 1;
+            animation: infinite;
+        }
+
+        .track2 {
+            position: absolute;
+            top: 70px;
+            left: 1000px;
+            width: 9148px;
+            height: 400px;
+            z-index: 2;
+        }
+
+        .track3 {
+            position: absolute;
+            top: 70px;
+            left: 1000px;
+            width: 9148px;
+            height: 400px;
+            z-index: 2;
+        }
+
+
+        .track4 {
+            position: absolute;
+            top: 70px;
+            left: 1000px;
+            width: 9148px;
+            height: 400px;
+            z-index: 2;
+        }
+    
+
+        .track5 {
+            position: absolute;
+            top: 70px;
+            left: 1000px;
+            width: 9148px;
+            height: 400px;
+            z-index: 2;
+        }
+    
+
+        .track6 {
+            position: absolute;
+            top: 70px;
+            left: 1000px;
+            width: 9148px;
+            height: 400px;
+            z-index: 2;
+        }
+    
+
+    
+
+    
+
+        img.asset {
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 4;
+        }
+
+        img.titleback {
+            position: absolute;
+            top: 500px;
+            left: 770px;
+            z-index: 3;
+            width: 458px;
+            height: 82px;
+        }
+
+        img.title1 {
+            position: absolute;
+            top: 510px;
+            left: 1250px;
+            z-index: 3;
+            width: 4600px;
+            height: 37px;
+        }
+
+        img.title2 {
+            position: absolute;
+            top: 510px;
+            left: 1250px;
+            z-index: 3;
+            width: 4320px;
+            height: 37px;
+        }
+
+        img.title3 {
+            position: absolute;
+            top: 510px;
+            left: 1250px;
+            z-index: 3;
+            width: 4320px;
+            height: 37px;
+        }
+
+        img.title4 {
+            position: absolute;
+            top: 510px;
+            left: 1250px;
+            z-index: 3;
+            width: 4320px;
+            height: 37px;
+        }
+
+        img.title5 {
+            position: absolute;
+            top: 510px;
+            left: 1250px;
+            z-index: 3;
+            width: 4068px;
+            height: 37px;
+        }
+
+        img.title6 {
+            position: absolute;
+            top: 510px;
+            left: 1250px;
+            z-index: 3;
+            width: 4068px;
+            height: 37px;
+        }
+
+
+
+        img.window {
+            position: absolute;
+            top: 100px;
+            left: 670px;
+            z-index: 6;
+            width: 485px;
+            height: 269px;
+        }
+
+        img.radio {
+            position: absolute;
+            top: 400px;
+            left: 750px;
+            z-index: 4;
+            width: 544px;
+            height: 329px;
+        }
+
+        img.button1 {
+            position: absolute;
+            top: 655px;
+            left: 780px;
+            z-index: 5;
+            width: 67.2px;
+            height: 34.2px;
+        }
+
+        img.button11 {
+            position: absolute;
+            top: 655px;
+            left: 780px;
+            z-index: 5;
+            width: 67.2px;
+            height: 34.2px;
+            display: none;
+        }
+
+        img.button2 {
+            position: absolute;
+            top: 655px;
+            left: 850px;
+            z-index: 5;
+            width: 67.2px;
+            height: 34.2px;
+        }
+
+        img.button22 {
+            position: absolute;
+            top: 655px;
+            left: 850px;
+            z-index: 5;
+            width: 67.2px;
+            height: 34.2px;
+            display: none;
+        }
+
+        img.button3 {
+            position: absolute;
+            top: 655px;
+            left: 920px;
+            z-index: 5;
+            width: 67.2px;
+            height: 34.2px;
+        }
+
+        img.button33 {
+            position: absolute;
+            top: 655px;
+            left: 920px;
+            z-index: 5;
+            width: 67.2px;
+            height: 34.2px;
+            display: none;
+        }
+
+        img.button4 {
+            position: absolute;
+            top: 655px;
+            left: 1060px;
+            z-index: 5;
+            width: 67.2px;
+            height: 34.2px;
+        }
+
+        img.button44 {
+            position: absolute;
+            top: 655px;
+            left: 1060px;
+            z-index: 5;
+            width: 67.2px;
+            height: 34.2px;
+            display: none;
+        }
+
+
+        img.button5 {
+            position: absolute;
+            top: 655px;
+            left: 1130px;
+            z-index: 5;
+            width: 67.2px;
+            height: 34.2px;
+        }
+
+
+        img.button55 {
+            position: absolute;
+            top: 655px;
+            left: 1130px;
+            z-index: 5;
+            width: 67.2px;
+            height: 34.2px;
+            display: none;
+        }
+
+
+        img.button6 {
+            position: absolute;
+            top: 655px;
+            left: 1200px;
+            z-index: 5;
+            width: 67.2px;
+            height: 34.2px;
+        }
+
+        img.button66 {
+            position: absolute;
+            top: 655px;
+            left: 1200px;
+            z-index: 5;
+            width: 67.2px;
+            height: 34.2px;
+            display: none;
+        }
+
+
+        img.on {
+            position: absolute;
+            top: 630px;
+            left: 985px;
+            z-index: 6;
+            width: 80px;
+            height: 80px;
+        }
+
+        img.gif2 {
+            position: absolute;
+            top: 120px;
+            left: 700px;
+            z-index: 5;
+            width: 350px;
+            height: 800px.
+        }
+
+
+        img.handle {
+            position: absolute;
+            top: 600px;
+            left: 300px;
+            z-index: 8;
+            width: 400px;
+            height: 400px;
+            transform-origin: center;
+        }
+
+        img.coffee {
+            position: absolute;
+            top: 700px;
+            left: 1200px;
+            z-index: 8;
+            width: 320px;
+            height: 310px.
+        }
+
+    </style>
+</head>
+
+<body>
+    <h1>Truck Track</h1>
+
+    <img src="truck.png" class="truck" alt="truck" width="119" height="170">
+    <img src="track.png" class="track" alt="track" width="800" height="400">
+    <img src="track1.png" class="track1" alt="track1" width="9184" height="400">
+    <img src="track2.png" class="track2" alt="track2" width="9148" height="400">
+    <img src="track3.png" class="track3" alt="track3" width="9148" height="400">
+    <img src="track4.png" class="track4" alt="track4" width="9148" height="400">
+    <img src="track5.png" class="track5" alt="track5" width="9148" height="400">
+    <img src="track6.png" class="track6" alt="track6" width="9148" height="400">
+    <img src="asset.png" class="asset" alt="asset" width="1700" height="900">
+    <img src="popup.png" class="window" alt="popup" width="485" height="269">
+    <img src="titleback.png" class="titleback" alt="titleback" width="458" height="82">
+    <img src="title1.png" class="title1" alt="title1" width="4600" height="37">    
+    <img src="title2.png" class="title2" alt="title2" width="4600 " height="37">
+    <img src="title3.png" class="title3" alt="title3" width="4098" height="37">
+    <img src="title4.png" class="title4" alt="title4" width="4600" height="37">
+    <img src="title5.png" class="title5" alt="title5" width="4600" height="37">
+    <img src="title6.png" class="title6" alt="title6" width="4600" height="37">
+    <img src="radio.png" class="radio" alt="radio" width="544" height="329">
+    <img src="button1.png" class="button1" alt="button1" width="67.2" height="34.2">
+    <img src="button11.png" class="button11" alt="button11" width="67.2" height="34.2" style="display: none;">
+    <img src="button2.png" class="button2" alt="button2" width="67.2" height="34.2">
+    <img src="button22.png" class="button22" alt="button22" width="67.2" height="34.2" style="display: none;">
+    <img src="button3.png" class="button3" alt="button3" width="67.2" height="34.2">
+    <img src="button33.png" class="button33" alt="button33" width="67.2" height="34.2" style="display: none;">
+    <img src="button4.png" class="button4" alt="button4" width="67.2" height="34.2">
+    <img src="button44.png" class="button44" alt="button44" width="67.2" height="34.2" style="display: none;">
+    <img src="button5.png" class="button5" alt="button5" width="67.2" height="34.2">
+    <img src="button55.png" class="button55" alt="button55" width="67.2" height="34.2" style="display: none;">
+    <img src="button6.png" class="button6" alt="button6" width="67.2" height="34.2">
+    <img src="button66.png" class="button66" alt="button66" width="67.2" height="34.2" style="display: none;">
+    <img src="on.png" class="on" alt="on" width="78" height="78">
+    <img src="https://media.giphy.com/media/3xz2BFkdjoXXmbBya4/giphy.gif" class="gif2" alt="GIF2" width="350" height="210">
+    <img src="dashboard.png" class="dashboard" alt="dashboard" width="300" height="300">
+    <img src="handle.png" class="handle" alt="handle" width="400" height="400">
+    <img src="coffee.png" class="coffee" alt="coffee" width="500" height="400">
+    <canvas width="1366" height="768"></canvas>
+    <audio id="honkAudio" src="honk.mp3"></audio>
+
+
+<script>
+
+    //경적
+ document.addEventListener('keydown', function (event) {
+      if (event.keyCode === 32) {
+        document.getElementById('honkAudio').play()
+          .then(() => {
+            console.log('Audio played successfully');
+          })
+          .catch((error) => {
+            console.error('Error playing audio:', error);
+          });
+      }
+    });
+
+    const handle = document.querySelector('.handle');
+    const button1 = document.querySelector('.button1');
+    const button11 = document.querySelector('.button11');
+    const title1 = document.querySelector('.title1');
+    const button2 = document.querySelector('.button2');
+    const button22 = document.querySelector('.button22');
+    const title2 = document.querySelector('.title2');
+    const button3 = document.querySelector('.button3');
+    const button33 = document.querySelector('.button33');
+    const title3 = document.querySelector('.title3');
+    const button4 = document.querySelector('.button4');
+    const button44 = document.querySelector('.button44');
+    const title4 = document.querySelector('.title4');
+    const button5 = document.querySelector('.button5');
+    const button55 = document.querySelector('.button55');
+    const title5 = document.querySelector('.title5');
+    const button6 = document.querySelector('.button6');
+    const button66 = document.querySelector('.button66');
+    const title6 = document.querySelector('.title6');
+    const track1 = document.querySelector('.track1');
+    const track2 = document.querySelector('.track2');    
+    const track3 = document.querySelector('.track3');
+    const track4 = document.querySelector('.track4');    
+    const track5 = document.querySelector('.track5');
+    const track6 = document.querySelector('.track6');
+    let audio1 = new Audio('song1.mp3');
+    let audio2 = new Audio('song2.mp3');
+    let audio3 = new Audio('song3.mp3');
+    let audio4 = new Audio('song4.mp3');
+    let audio5 = new Audio('song5.mp3');
+    let audio6 = new Audio('song6.mp3');
+    let isSong1Playing = false;
+    let isSong2Playing = false;
+    let isSong3Playing = false;
+    let isSong4Playing = false;
+    let isSong5Playing = false;
+    let isSong6Playing = false;
+
+
+
+    //방향키 이벵
+    window.addEventListener('keydown', function (e) {
+        const step = 10;
+        if (e.key === 'ArrowLeft') {
+            handle.style.transform = `translate(-50%, -50%) rotate(${getCurrentRotation() - step}deg)`;
+        } else if (e.key === 'ArrowRight') {
+            handle.style.transform = `translate(-50%, -50%) rotate(${getCurrentRotation() + step}deg)`;
+        }
+    });
+
+    // 버튼1
+    button1.addEventListener('click', function () {
+        button1.style.display = 'none';
+        button11.style.display = 'block';
+        title1.style.animation = 'moveLeftTitle 17s linear infinite';
+        if (!isSong1Playing) {
+            playSong(audio1);
+            isSong1Playing = true;
+        }
+    });
+
+    // 버튼11
+    button11.addEventListener('click', function () {
+        button1.style.display = 'block';
+        button11.style.display = 'none';
+        title1.style.animation = 'none';
+        if (isSong1Playing) {
+            stopSong(audio1);
+            isSong1Playing = false;
+        }
+    });
+
+    // 트랙1
+    button1.addEventListener('click', function () {
+        button1.style.display = 'none';
+        button11.style.display = 'block';
+        track1.style.animation = 'moveLeftTitle 10s linear infinite';
+
+        });
+
+    // 트랙11
+    button11.addEventListener('click', function () {
+        button1.style.display = 'block';
+        button11.style.display = 'none';
+        track1.style.animation = 'none';
+    });
+
+    // 버튼2
+    button2.addEventListener('click', function () {
+        button2.style.display = 'none';
+        button22.style.display = 'block';
+        title2.style.animation = 'moveLeftTitle 17s linear infinite';
+        if (!isSong2Playing) {
+            playSong(audio2);
+            isSong2Playing = true;
+        }
+    });
+
+    // 버튼22 
+    button22.addEventListener('click', function () {
+        button2.style.display = 'block';
+        button22.style.display = 'none';
+        title2.style.animation = 'none';
+        if (isSong2Playing) {
+            stopSong(audio2);
+            isSong2Playing = false;
+        }
+    });
+
+
+    // 트랙2
+    button2.addEventListener('click', function () {
+        button2.style.display = 'none';
+        button22.style.display = 'block';
+        track2.style.animation = 'moveLeftTitle 10s linear infinite';
+
+        });
+
+    // 트랙22
+    button22.addEventListener('click', function () {
+        button2.style.display = 'block';
+        button22.style.display = 'none';
+        track2.style.animation = 'none';
+    });
+
+     // 버튼3
+    button3.addEventListener('click', function () {
+        button3.style.display = 'none';
+        button33.style.display = 'block';
+        title3.style.animation = 'moveLeftTitle 17s linear infinite';
+        if (!isSong3Playing) {
+            playSong(audio3);
+            isSong3Playing = true;
+        }
+    });
+
+    // 버튼33 
+    button33.addEventListener('click', function () {
+        button3.style.display = 'block';
+        button33.style.display = 'none';
+        title3.style.animation = 'none';
+        if (isSong3Playing) {
+            stopSong(audio3);
+            isSong3Playing = false;
+        }
+    });
+
+    // 트랙3
+    button3.addEventListener('click', function () {
+        button3.style.display = 'none';
+        button33.style.display = 'block';
+        track3.style.animation = 'moveLeftTitle 10s linear infinite';
+
+        });
+
+    // 트랙33
+    button33.addEventListener('click', function () {
+        button3.style.display = 'block';
+        button33.style.display = 'none';
+        track3.style.animation = 'none';
+    });
+
+         // 버튼4
+    button4.addEventListener('click', function () {
+        button4.style.display = 'none';
+        button44.style.display = 'block';
+        title4.style.animation = 'moveLeftTitle 17s linear infinite';
+        if (!isSong4Playing) {
+            playSong(audio4);
+            isSong4Playing = true;
+        }
+    });
+
+
+    // 버튼44 
+    button44.addEventListener('click', function () {
+        button4.style.display = 'block';
+        button44.style.display = 'none';
+        title4.style.animation = 'none';
+        if (isSong4Playing) {
+            stopSong(audio4);
+            isSong4Playing = false;
+        }
+    });
+
+            // 트랙4
+    button4.addEventListener('click', function () {
+        button4.style.display = 'none';
+        button44.style.display = 'block';
+        track4.style.animation = 'moveLeftTitle 10s linear infinite';
+
+        });
+
+    // 트랙44
+    button44.addEventListener('click', function () {
+        button4.style.display = 'block';
+        button44.style.display = 'none';
+        track4.style.animation = 'none';
+    });
+         
+         // 버튼5
+    button5.addEventListener('click', function () {
+        button5.style.display = 'none';
+        button55.style.display = 'block';
+        title5.style.animation = 'moveLeftTitle 17s linear infinite';
+        if (!isSong5Playing) {
+            playSong(audio5);
+            isSong5Playing = true;
+        }
+    });
+
+    // 버튼55 
+    button55.addEventListener('click', function () {
+        button5.style.display = 'block';
+        button55.style.display = 'none';
+        title5.style.animation = 'none';
+        if (isSong5Playing) {
+            stopSong(audio5);
+            isSong5Playing = false;
+        }
+    });
+
+        // 트랙5
+    button5.addEventListener('click', function () {
+        button5.style.display = 'none';
+        button55.style.display = 'block';
+        track5.style.animation = 'moveLeftTitle 10s linear infinite';
+
+        });
+
+    // 트랙55
+    button55.addEventListener('click', function () {
+        button5.style.display = 'block';
+        button55.style.display = 'none';
+        track5.style.animation = 'none';
+    });
+
+             // 버튼6
+    button6.addEventListener('click', function () {
+        button6.style.display = 'none';
+        button66.style.display = 'block';
+        title6.style.animation = 'moveLeftTitle 17s linear infinite';
+        if (!isSong6Playing) {
+            playSong(audio6);
+            isSong6Playing = true;
+        }
+    });
+
+    // 버튼66 
+    button66.addEventListener('click', function () {
+        button6.style.display = 'block';
+        button66.style.display = 'none';
+        title6.style.animation = 'none';
+        if (isSong6Playing) {
+            stopSong(audio6);
+            isSong6Playing = false;
+        }
+    });
+
+    // 트랙6
+    button6.addEventListener('click', function () {
+        button6.style.display = 'none';
+        button66.style.display = 'block';
+        track6.style.animation = 'moveLeftTitle 10s linear infinite';
+
+        });
+
+    // 트랙66
+    button66.addEventListener('click', function () {
+        button6.style.display = 'block';
+        button66.style.display = 'none';
+        track6.style.animation = 'none';
+    });
+
+    function playSong(audio) {
+        audio.play();
+    }
+
+    function stopSong(audio) {
+        audio.pause();
+        audio.currentTime = 0;
+    }
+
+        function getCurrentRotation() {
+        const transformValue = window.getComputedStyle(handle).getPropertyValue('transform');
+        const matrix = new DOMMatrix(transformValue);
+        return Math.round(Math.asin(matrix.b) * (180 / Math.PI));
+    }
+
+</script>
+<style>
+    @keyframes moveLeftTitle {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-100%);
+    }
+  }
+
+</style>
+</body>
+
+ <style>
+    @keyframes moveUpDown {
+      0% {
+        transform: translateY(0);
+      }
+      50% {
+        transform: translateY(5px);
+      }
+      100% {
+        transform: translateY(0);
+      }
+    }
+
+    body {
+      margin: 0;
+      overflow: hidden;
+    }
+
+    .moving-truck {
+            position: absolute;
+            top: 282px;
+            left: 34.5px;
+            z-index: 2;
+      transform: translate(-50%, -50%);
+      animation: moveUpDown 2s linear infinite;
+    }
+  </style>
+
+  <style>
+@keyframes moveLeftTitle {
+  10% {
+    transform: translateX(-10%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+</style>
+
+<script>
+  const track1 = document.querySelector('.track1');
+  const track2 = document.querySelector('.track2');
+  const track3 = document.querySelector('.track3');
+  const track4 = document.querySelector('.track4');
+  const track5 = document.querySelector('.track5');
+  const track6 = document.querySelector('.track6');
+
+  track1.addEventListener('animationiteration', moveTrack);
+  track2.addEventListener('animationiteration', moveTrack);
+  track3.addEventListener('animationiteration', moveTrack);
+  track4.addEventListener('animationiteration', moveTrack);
+  track5.addEventListener('animationiteration', moveTrack);
+  track6.addEventListener('animationiteration', moveTrack);
+
+  function moveTrack(event) {
+    const track = event.target;
+    track.style.animation = 'none'; // 애니메이션을 초기화하여 연결을 부드럽게 함
+    void track.offsetWidth; // 리플로우를 발생시켜 초기화를 적용
+    track.style.animation = 'moveLeftTitle 10s linear infinite'; // 애니메이션 다시 적용
+  }
+
+  let activeButtonId = null;
+
+function toggleButton(buttonId) {
+  // 현재 활성화된 버튼이 있으면 비활성화
+  if (activeButtonId !== null) {
+    document.getElementById(activeButtonId).disabled = false;
+  }
+
+  // 눌린 버튼을 활성화하고 activeButtonId 업데이트
+  document.getElementById(buttonId).disabled = true;
+  activeButtonId = buttonId;
+}
+
+
+</script>
+</head>
+<body>
+  <img src="truck.png" alt="Moving Truck" class="moving-truck">
+</body>
+
+</html>
